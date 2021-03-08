@@ -14,7 +14,7 @@ public class BrowserTest {
 
 	
 	@Test
-	public void getData()
+	public void getData() throws InterruptedException
 	{
 		System.out.println("Hello Guys");
 		System.setProperty("webdriver.chrome.driver", "chromedriver.exe");
@@ -23,7 +23,8 @@ public class BrowserTest {
 		String text =driver.findElement(By.cssSelector("h1")).getText();
 		System.out.println(text);
 		Assert.assertTrue(text.equalsIgnoreCase("QA Rave KMD"));
-		driver.close();
+		Thread.sleep(1000);
+		//driver.close();
 	
 		
 		
